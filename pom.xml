@@ -31,7 +31,7 @@
 
     <groupId>com.github.cbismuth</groupId>
     <artifactId>fast-random</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0-SNAPSHOT</version>
 
     <name>Fast random</name>
     <description>Java API to quickly extract random values from a source array.</description>
