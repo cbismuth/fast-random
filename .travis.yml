@@ -1,0 +1,7 @@
+language: java
+jdk: openjdk7
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script: mvn test jacoco:report coveralls:report -P coverage -Dmaven.javadoc.skip=true -B -V
+cache:
+  directories:
+    - "$HOME/.m2"
