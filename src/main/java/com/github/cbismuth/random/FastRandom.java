@@ -22,16 +22,16 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.github.cbismuth.random.utils;
+package com.github.cbismuth.random;
 
-import com.github.cbismuth.random.utils.exception.TooMuchDuplicatesException;
+import com.github.cbismuth.random.exception.TooMuchDuplicatesException;
 import org.apache.commons.lang3.ArrayUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public final class RandomArrays {
+public final class FastRandom {
 
     /**
      * Extracts random values from a source array the noob way:
@@ -226,7 +226,8 @@ public final class RandomArrays {
         return isDuplicate;
     }
 
-    private RandomArrays() {
+    private FastRandom() {
+        // UTILITY CLASS
     }
 
 }

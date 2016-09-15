@@ -1,10 +1,11 @@
 # Random Utils
 
-[![build](https://travis-ci.org/cbismuth/random-utils.svg?branch=master)](https://travis-ci.org/cbismuth/random-utils)
-[![coverage](https://coveralls.io/repos/github/cbismuth/random-utils/badge.svg?branch=master)](https://coveralls.io/github/cbismuth/random-utils?branch=master)
-[![issues](https://img.shields.io/github/issues/cbismuth/random-utils.svg)](https://github.com/cbismuth/random-utils/issues)
-[![licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cbismuth/random-utils/master/LICENSE.md)
-
+[![build](https://travis-ci.org/cbismuth/fast-random.svg?branch=master)](https://travis-ci.org/cbismuth/fast-random)
+[![coverage](https://coveralls.io/repos/github/cbismuth/fast-random/badge.svg?branch=master)](https://coveralls.io/github/cbismuth/fast-random?branch=master)
+[![javadoc](http://javadoc.io/badge/com.github.cbismuth/fast-random.svg)](http://javadoc.io/doc/com.github.cbismuth/fast-random)
+[![repository](https://maven-badges.herokuapp.com/maven-central/com.github.cbismuth/fast-random/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.cbismuth/fast-random/)
+[![issues](https://img.shields.io/github/issues/cbismuth/fast-random.svg)](https://github.com/cbismuth/fast-random/issues)
+[![licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cbismuth/fast-random/master/LICENSE.md)
 
 This repository contains an API to quickly extract random values from a source array.
 

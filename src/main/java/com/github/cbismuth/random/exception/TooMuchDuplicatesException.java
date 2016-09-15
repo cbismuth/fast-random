@@ -22,7 +22,7 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.github.cbismuth.random.utils.exception;
+package com.github.cbismuth.random.exception;
 
 public class TooMuchDuplicatesException extends IllegalStateException {
 

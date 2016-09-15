@@ -22,9 +22,9 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package com.github.cbismuth.random.utils;
+package com.github.cbismuth.random;
 
-import com.github.cbismuth.random.utils.exception.TooMuchDuplicatesException;
+import com.github.cbismuth.random.exception.TooMuchDuplicatesException;
 import com.google.common.base.Stopwatch;
 import org.junit.Before;
 import org.junit.Test;
@@ -35,13 +35,14 @@ import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.System.currentTimeMillis;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertTrue;
 import static org.slf4j.LoggerFactory.getLogger;
 
-public class RandomArraysTest {
+public class FastRandomTest {
 
-    private static final Logger LOGGER = getLogger(RandomArraysTest.class);
+    private static final Logger LOGGER = getLogger(FastRandomTest.class);
 
     private static final int RANDOM_ARRAY_LENGTH = 1000;
     private static final int SOURCE_ARRAY_LENGTH = 1000000;
@@ -51,7 +52,7 @@ public class RandomArraysTest {
 
     @Before
     public void setUp() {
-        final Random random = new Random(System.currentTimeMillis());
+        final Random random = new Random(currentTimeMillis());
 
         ids = new Object[SOURCE_ARRAY_LENGTH];
         for (int i = 0; i < SOURCE_ARRAY_LENGTH; i++) {
@@ -62,7 +63,7 @@ public class RandomArraysTest {
     @Test
     public void testRandomOfLength_noob() throws Exception {
         final Stopwatch stopwatch = Stopwatch.createStarted();
-        final Object[] randomized = RandomArrays.noobRandomOfLength(ids, RANDOM_ARRAY_LENGTH);
+        final Object[] randomized = FastRandom.noobRandomOfLength(ids, RANDOM_ARRAY_LENGTH);
         stopwatch.stop();
 
         LOGGER.info(String.format("testRandomOfLength_noob executed in %d ms.", stopwatch.elapsed(TimeUnit.MILLISECONDS)));
@@ -75,7 +76,7 @@ public class RandomArraysTest {
     @Test
     public void testRandomOfLength_quick() throws Exception {
         final Stopwatch stopwatch = Stopwatch.createStarted();
-        final Object[] randomized = RandomArrays.quickRandomOfLength_withoutHash(ids, RANDOM_ARRAY_LENGTH);
+        final Object[] randomized = FastRandom.quickRandomOfLength_withoutHash(ids, RANDOM_ARRAY_LENGTH);
         stopwatch.stop();
 
         LOGGER.info(String.format("testRandomOfLength_quick executed in %d ms.", stopwatch.elapsed(TimeUnit.MILLISECONDS)));
@@ -88,7 +89,7 @@ public class RandomArraysTest {
     @Test
     public void testRandomOfLength_quickestWithHash() throws Exception {
         final Stopwatch stopwatch = Stopwatch.createStarted();
-        final Object[] randomized = RandomArrays.quickRandomOfLength_withHash(ids, RANDOM_ARRAY_LENGTH);
+        final Object[] randomized = FastRandom.quickRandomOfLength_withHash(ids, RANDOM_ARRAY_LENGTH);
         stopwatch.stop();
 
         LOGGER.info(String.format("testRandomOfLength_quick executed in %d ms.", stopwatch.elapsed(TimeUnit.MILLISECONDS)));
@@ -105,14 +106,14 @@ public class RandomArraysTest {
         final int sourceArrayLength = 32;
         final int sourceMaxValue = 3;
 
-        final Random _random = new Random(System.currentTimeMillis());
+        final Random _random = new Random(currentTimeMillis());
 
         final Object[] _ids = new Object[sourceArrayLength];
         for (int i = 0; i < sourceArrayLength; i++) {
             _ids[i] = _random.nextInt(sourceMaxValue);
         }
 
-        RandomArrays.quickRandomOfLength_withoutHash(_ids, randomArrayLength);
+        FastRandom.quickRandomOfLength_withoutHash(_ids, randomArrayLength);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -122,14 +123,14 @@ public class RandomArraysTest {
         final int sourceArrayLength = 32;
         final int sourceMaxValue = 3;
 
-        final Random _random = new Random(System.currentTimeMillis());
+        final Random _random = new Random(currentTimeMillis());
 
         final Object[] _ids = new Object[sourceArrayLength];
         for (int i = 0; i < sourceArrayLength; i++) {
             _ids[i] = _random.nextInt(sourceMaxValue);
         }
 
-        RandomArrays.quickRandomOfLength_withoutHash(_ids, randomArrayLength);
+        FastRandom.quickRandomOfLength_withoutHash(_ids, randomArrayLength);
     }
 
     @Test(expected = IllegalArgumentException.class)
@@ -139,14 +140,14 @@ public class RandomArraysTest {
         final int sourceArrayLength = 32;
         final int sourceMaxValue = 3;
 
-        final Random _random = new Random(System.currentTimeMillis());
+        final Random _random = new Random(currentTimeMillis());
 
         final Object[] _ids = new Object[sourceArrayLength];
         for (int i = 0; i < sourceArrayLength; i++) {
             _ids[i] = _random.nextInt(sourceMaxValue);
         }
 
-        RandomArrays.quickRandomOfLength_withoutHash(_ids, randomArrayLength);
+        FastRandom.quickRandomOfLength_withoutHash(_ids, randomArrayLength);
     }
 
     private void checkExpectedLength(final Object[] randomized, final int expectedLength) {
