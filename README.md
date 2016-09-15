@@ -6,7 +6,7 @@
 [![licence](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cbismuth/random-utils/master/LICENSE.md)
 
 
-This repository contains a [quickRandomOfLength](src/main/java/com/github/random/utils/RandomArrays.java) API to quickly extract random values from a source array.
+This repository contains an API to quickly extract random values from a source array.
 
 This API aims to be **scalable** (i.e. does not depend on source array size), **fair** and returns a random array **without duplicate**.
 
