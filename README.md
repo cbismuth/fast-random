@@ -11,14 +11,14 @@ This repository contains an API to quickly extract random values from a source a
 
 This API aims to be **scalable** (i.e. does not depend on source array size), **fair** and returns a random array **without duplicate**.
 
-## Metrics
+## Metrics
 
-### Expectations
+### Expectations
 
   * a source array of 1 000 000 elements
   * a random sub-array of 100 000 elements
   
-### Elapsed time
+### Elapsed time
 
   * **noob** version (filter input array with split and join) &asymp; **4 minutes**
   * **smart** version (in-place push back picked up elements) &asymp; **25 seconds**
